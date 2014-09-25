@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body{
+	margin:0;
+	padding:0;
+	font-family: 'Droid Sans', serif;
+	height: 100%;
+	width: 100%;
+}
+.row{
+	margin: 0;
+	float: left;
+	display: inline;
+	height: 24%;
+	width: 100%;
+}
+
+#mainBody{
+	padding-top: 40px;
+	height: 99%;
+	width: 100%;
+}
+
+.navbar-brand{
+	font-size: x-large;
+}
+
+#swatchTitle{
+	color:#DBA027;
+}
+
+h3{
+	padding-top: 20%;
+	text-align: center;
+}
+
+.navbar {
+    font-weight: 800;
+    font-size: 14px;
+    padding: 10px 0 0 0;
+    margin:0;
+    background-color: white;
+}
+
+.colorBox {
+	height: 100%;
+	width: 20%;
+}
+
+footer{
+	text-align: center;
+	color: gray;
+}
+
+.row a{
+	color: #040707;
+}
+
+.row a:hover, .row a:focus{
+	text-decoration: none;
+	color: #121f1f;
+}
+
+#copyMessage{
+	text-align: center;
+	padding-top: 20%;
+	height: 95%;
+	width: 100%;
+}
+
+#weather{
+	color: grey;
+	text-transform: lowercase;
+	font-size: small;
+}
+
+
+
+
+
+
+
+
+
