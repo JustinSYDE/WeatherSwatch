@@ -11,9 +11,9 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav nav-pills navbar-right">
-            <li ng-class="{active: tab.isSet(1)}"><a id="currentCity" ng-click="tab.setTab(1)" href="#">Calgary</a></li>
-            <li ng-class="{active: tab.isSet(2)}"><a ng-click="tab.setTab(2)" href="#">Toronto</a></li>
-            <li ng-class="{active: tab.isSet(3)}"><a ng-click="tab.setTab(3)" href="#">Hong Kong</a></li>
+            <li ng-class="{active: tabService.isSet(1)}"><a id="currentCity" ng-click="tabService.setTab(1); colorSwatchService.myAjaxCheck();" href="#">Calgary</a></li>
+            <li ng-class="{active: tabService.isSet(2)}"><a ng-click="tabService.setTab(2); colorSwatchService.myAjaxCheck();" href="#">Toronto</a></li>
+            <li ng-class="{active: tabService.isSet(3)}"><a ng-click="tabService.setTab(3); colorSwatchService.myAjaxCheck();" href="#">Hong Kong</a></li>
       </ul>
     </div>
   </div>

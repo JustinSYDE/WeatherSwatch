@@ -22,17 +22,23 @@ html, body{
 	height: 100%;
 	width: 100%;
 }
-.row{
-	margin: 0;
-	float: left;
-	display: inline;
-	height: 24%;
+
+#view{
+	height: 89%;
 	width: 100%;
 }
 
 #mainBody{
-	padding-top: 40px;
-	height: 99%;
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.row{
+	margin: 0;
+	float: left;
+	display: inline;
+	height: 25%;
 	width: 100%;
 }
 
@@ -53,8 +59,9 @@ h3{
     font-weight: 800;
     font-size: 14px;
     padding: 10px 0 0 0;
-    margin:0;
     background-color: white;
+    position: relative;
+    margin-bottom: 0;
 }
 
 .colorBox {
@@ -84,7 +91,7 @@ footer{
 }
 
 #weather{
-	color: grey;
+	color: gray;
 	text-transform: lowercase;
 	font-size: small;
 }

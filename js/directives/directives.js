@@ -1,33 +1,18 @@
-(function(){
+//MAIN DIRECTIVE FOR MAIN TEMPLATE HTML
 
-	var app = angular.module('directives', []);
+define(['directivesFactory'], function(directivesFactory){
 
-	app.directive('testDiv', function(){
+	directivesFactory.directive('colorSwatch', function(){
 		return{
 			restrict: 'E',
-			templateUrl: "partials/test-div.html"
+			templateUrl: "templates/partials/color-swatch.html"
 		};
 	});
 
-	app.directive('copiedPage', function(){
+	directivesFactory.directive('navbar', function(){
 		return{
 			restrict: 'E',
-			templateUrl: "partials/copied-page.html"
+			templateUrl: "templates/partials/navbar.html"
 		};
 	});
-
-	app.directive('colorSwatch', function(){
-		return{
-			restrict: 'E',
-			templateUrl: "partials/color-swatch.html"
-		};
-	});
-
-	app.directive('navbar', function(){
-		return{
-			restrict: 'E',
-			templateUrl: "partials/navbar.html"
-		};
-	})
-
-})();
+});
