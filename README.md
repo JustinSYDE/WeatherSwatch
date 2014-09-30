@@ -1,4 +1,5 @@
-BAR-Boilerplate
+Weather Swatch
 ===============
 
-Custom Bootstrap + AngularJS + RequireJS  Boilerplate
+Coming Soon!
+
