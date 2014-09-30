@@ -17,31 +17,48 @@ define(["servicesFactory",
 		"SpringCollectionService",
 		"CityService",
 		function(summerCollectionService, fallCollectionService, winterCollectionService, springCollectionService, cityService) {
+
 			var colorSwatchService = {
 				seasons: null,
 				i: 0,
+				cityOne: null,
+				cityTwo: null,
+				cityThree: null,
+				weather: null,
+
+				generateRandomCities: function(){
+					colorSwatchService.cityOne = cityService.generateRandomCity();
+				
+					do{
+						colorSwatchService.cityTwo = cityService.generateRandomCity();
+					}while(colorSwatchService.cityTwo === colorSwatchService.cityOne);
+
+					do{
+						colorSwatchService.cityThree = cityService.generateRandomCity();
+					}while(colorSwatchService.cityThree === colorSwatchService.cityTwo);
+				},
 
 				myAjaxCheck:function(){
+					//console.log(colorSwatchService.city);
 					$.simpleWeather({
-					    location: 'Calgary',
+					    location: colorSwatchService.cityOne,
 					    woeid: '',
 					    unit: 'c',
 					    success: function(weather) {
-					      console.log("1st");
-					      var temperatureTemp = parseInt(weather.temp);
-					      html = '<span>'+weather.temp+'&deg;'+weather.units.temp+' '+'</span>';
-					      html += '<span>'+weather.currently+'</span>';
-					      $('#weather').html(html);
-					      colorSwatchService.returnSeason(temperatureTemp);
-					      console.log(colorSwatchService.seasons);
+					        var temperatureTemp = parseInt(weather.temp);
+					        /*html = '<span>'+weather.temp+'&deg;'+weather.units.temp+' '+'</span>';
+					        html += '<span>'+weather.currently+'</span>';
+					        $('#weather').html(html);*/
+					        colorSwatchService.weather = +weather.temp + '°' + weather.units.temp + ' ' + weather.currently;
+					        colorSwatchService.returnSeason(temperatureTemp);
 					    }
 				  	});
+
 				},
 
 				returnSeason:function(temperature){
-					console.log("2nd");
 					console.log(temperature);
-
+					console.log(colorSwatchService.cityOne);
 					var date = new Date();
 					var month = date.getMonth();
 
@@ -62,7 +79,7 @@ define(["servicesFactory",
 					}
 
 					if (colorSwatchService.i === 0){
-						document.getElementById("currentCity").click();	//Bad hack that reloads the page so that the color swatch will reload
+						document.getElementById("swatchTitle").click();	//Bad hack that reloads the page so that the color swatch will reload
 						colorSwatchService.i++;
 					}
 				} 

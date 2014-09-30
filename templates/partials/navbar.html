@@ -7,13 +7,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">WEATHER <span id="swatchTitle">SWATCH</span> <span id="weather"></span></a>
+      <a class="navbar-brand" href="#">WEATHER <span id="swatchTitle">SWATCH</span> 
+        <span id="weather">{{weather}}</span>
+      </a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav nav-pills navbar-right">
-            <li ng-class="{active: tabService.isSet(1)}"><a id="currentCity" ng-click="tabService.setTab(1); colorSwatchService.myAjaxCheck();" href="#">Calgary</a></li>
-            <li ng-class="{active: tabService.isSet(2)}"><a ng-click="tabService.setTab(2); colorSwatchService.myAjaxCheck();" href="#">Toronto</a></li>
-            <li ng-class="{active: tabService.isSet(3)}"><a ng-click="tabService.setTab(3); colorSwatchService.myAjaxCheck();" href="#">Hong Kong</a></li>
+            <li ng-class="{active: tabService.isSet(1)}"><a id="currentCity" ng-click="tabService.setTab(1); colorSwatchService.myAjaxCheck();">{{cityOne}}</a></li>
+            <li ng-class="{active: tabService.isSet(2)}"><a ng-click="tabService.setTab(2); colorSwatchService.myAjaxCheck();">{{cityTwo}}</a></li>
+            <li ng-class="{active: tabService.isSet(3)}"><a ng-click="tabService.setTab(3); colorSwatchService.myAjaxCheck();">{{cityThree}}</a></li>
       </ul>
     </div>
   </div>

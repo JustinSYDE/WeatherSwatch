@@ -2,4 +2,3 @@ Weather Swatch
 ===============
 
 Coming Soon!
-
