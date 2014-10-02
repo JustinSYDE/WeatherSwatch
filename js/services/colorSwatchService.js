@@ -17,13 +17,14 @@ define(["servicesFactory",
 		"SpringCollectionService",
 		"CityService",
 		function(summerCollectionService, fallCollectionService, winterCollectionService, springCollectionService, cityService) {
+			var _scope;
 
 			var colorSwatchService = {
 				seasons: null,
 				i: 0,
-				cityOne: null,
-				cityTwo: null,
-				cityThree: null,
+				cityOne: ' ',
+				cityTwo: " ",
+				cityThree: " ",
 				weather: null,
 
 				generateRandomCities: function(){
@@ -31,34 +32,35 @@ define(["servicesFactory",
 				
 					do{
 						colorSwatchService.cityTwo = cityService.generateRandomCity();
-					}while(colorSwatchService.cityTwo === colorSwatchService.cityOne);
+					}while(colorSwatchService.cityTwo == colorSwatchService.cityOne);
 
 					do{
 						colorSwatchService.cityThree = cityService.generateRandomCity();
-					}while(colorSwatchService.cityThree === colorSwatchService.cityTwo);
+					}while(colorSwatchService.cityThree == colorSwatchService.cityTwo);
 				},
 
-				myAjaxCheck:function(){
+				myAjaxCheck:function(city){
 					//console.log(colorSwatchService.city);
+
 					$.simpleWeather({
-					    location: colorSwatchService.cityOne,
+					    location: city,
 					    woeid: '',
 					    unit: 'c',
 					    success: function(weather) {
 					        var temperatureTemp = parseInt(weather.temp);
-					        /*html = '<span>'+weather.temp+'&deg;'+weather.units.temp+' '+'</span>';
-					        html += '<span>'+weather.currently+'</span>';
-					        $('#weather').html(html);*/
-					        colorSwatchService.weather = +weather.temp + '°' + weather.units.temp + ' ' + weather.currently;
+					        colorSwatchService.weather = weather.city + '| ' + weather.temp + '°' + weather.units.temp + ' ' + weather.currently;
 					        colorSwatchService.returnSeason(temperatureTemp);
+					        if(_scope){
+					        	_scope.$digest();
+					        }
 					    }
 				  	});
-
 				},
 
 				returnSeason:function(temperature){
+					/*console.log("returnSeason");
 					console.log(temperature);
-					console.log(colorSwatchService.cityOne);
+					console.log(colorSwatchService.cityOne);*/
 					var date = new Date();
 					var month = date.getMonth();
 
@@ -79,12 +81,21 @@ define(["servicesFactory",
 					}
 
 					if (colorSwatchService.i === 0){
-						document.getElementById("swatchTitle").click();	//Bad hack that reloads the page so that the color swatch will reload
+						//console.log("clicks");
+						//document.getElementById("swatchTitle").click();	//Bad hack that reloads the page so that the color swatch will reload
 						colorSwatchService.i++;
 					}
-				} 
+
+					if (_scope){
+						_scope.$digest();
+					}
+				}
 			};
 
+		colorSwatchService.init = function(scope){
+			_scope = scope;
+			return colorSwatchService;
+		};
 		return colorSwatchService;
 	}]);
 });

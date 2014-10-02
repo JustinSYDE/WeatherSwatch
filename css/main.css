@@ -24,7 +24,7 @@ html, body{
 }
 
 #view{
-	height: 89%;
+	height: 90%;
 	width: 100%;
 }
 
@@ -40,6 +40,8 @@ html, body{
 	display: inline;
 	height: 25%;
 	width: 100%;
+	margin-bottom: 2px;
+	position: relative;
 }
 
 .navbar-brand{
@@ -51,7 +53,7 @@ html, body{
 }
 
 h3{
-	padding-top: 20%;
+	padding-top: 25%;
 	text-align: center;
 }
 

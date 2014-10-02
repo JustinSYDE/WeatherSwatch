@@ -11,10 +11,11 @@
 	require.config({
 		baseUrl: 'js',
 		paths: {
-			'angular': 'libs/angular-1.2.24',
+			'angular': 'libs/angular-1.3.0',
 			'angularRoute': 'libs/angular-route-1.2.24',
-			'bootstrap': 'libs/modernizr-2.6.2-respond-1.1.0.min'
-			//'jquery': 'libs/jquery-1.11.0.min',
+			'bootstrap': 'libs/modernizr-2.6.2-respond-1.1.0.min',
+			'jquery': 'libs/jquery',
+			'simpleWeather': 'libs/jquery.simpleWeather'
 		},
 		shim: {
 			'angular': {
@@ -22,6 +23,12 @@
 			},
 			'angularRoute': {
 				deps: ['angular']
+			},
+			'jquery': {
+				exports: '$'
+			},
+			'simpleWeather': {
+				deps: ['jquery']
 			}
 		}
 	});
@@ -52,7 +59,7 @@
 	);
 
 	//BOOTSTRAP ANGULARJS TO THE MOTHER 'APP'
-	require(['app'], function(app) {
+	require(['app', 'jquery', 'simpleWeather'], function(app, jquery, simpleWeather) {
 		require([
 				'controllers/ColorSwatchCtrl',
 			],

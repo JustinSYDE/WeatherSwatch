@@ -1,3 +1,4 @@
+<!--div class="navbar navbar-fixed-top" role="navigation" ng-mouseover = "colorSwatchService.myAjaxCheck(colorSwatchService.cityOne)"-->
 <div class="navbar navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -13,9 +14,9 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav nav-pills navbar-right">
-            <li ng-class="{active: tabService.isSet(1)}"><a id="currentCity" ng-click="tabService.setTab(1); colorSwatchService.myAjaxCheck();">{{cityOne}}</a></li>
-            <li ng-class="{active: tabService.isSet(2)}"><a ng-click="tabService.setTab(2); colorSwatchService.myAjaxCheck();">{{cityTwo}}</a></li>
-            <li ng-class="{active: tabService.isSet(3)}"><a ng-click="tabService.setTab(3); colorSwatchService.myAjaxCheck();">{{cityThree}}</a></li>
+            <li ng-class="{active: tabService.isSet(1)}"><a id="currentCity" ng-click="tabService.setTab(1); colorSwatchService.myAjaxCheck(colorSwatchService.cityOne);">{{cityOne}}</a></li>
+            <li ng-class="{active: tabService.isSet(2)}"><a ng-click="tabService.setTab(2); colorSwatchService.myAjaxCheck(colorSwatchService.cityTwo);">{{cityTwo}}</a></li>
+            <li ng-class="{active: tabService.isSet(3)}"><a ng-click="tabService.setTab(3); colorSwatchService.myAjaxCheck(colorSwatchService.cityThree);">{{cityThree}}</a></li>
       </ul>
     </div>
   </div>
