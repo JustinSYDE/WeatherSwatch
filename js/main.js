@@ -61,8 +61,8 @@
 	//BOOTSTRAP ANGULARJS TO THE MOTHER 'APP'
 	require(['app', 'jquery', 'simpleWeather'], function(app, jquery, simpleWeather) {
 		require([
-				'controllers/ColorSwatchCtrl',
-				'controllers/CopyCtrl'
+				'controllers/colorSwatchCtrl',
+				'controllers/copyCtrl'
 			],
 			function() {
 				app.config(['$routeProvider', function($routeProvider) {
