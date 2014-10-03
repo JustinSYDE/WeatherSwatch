@@ -62,11 +62,15 @@
 	require(['app', 'jquery', 'simpleWeather'], function(app, jquery, simpleWeather) {
 		require([
 				'controllers/ColorSwatchCtrl',
+				'controllers/CopyCtrl'
 			],
 			function() {
 				app.config(['$routeProvider', function($routeProvider) {
-					$routeProvider.
-						when('/', {templateUrl: 'templates/colorSwatch.html', controller: "ColorSwatchCtrl"}).
+					$routeProvider
+						.when('/', {templateUrl: 'templates/colorSwatch.html', controller: "ColorSwatchCtrl"})
+						
+
+						.when('/copy', {templateUrl: 'templates/copied-page.html', controller: "CopyCtrl"}).
 						otherwise({redirectTo: '/'});
 				}]);
 

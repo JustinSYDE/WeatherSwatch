@@ -3,8 +3,8 @@ define(["servicesFactory"], function(servicesFactory) {
 	servicesFactory.factory('SpringCollectionService', function() {
 		var springCollection = [
 			{
-				name: 'Spring Wedding',
-				hexColor: ['#234D20', '#36802D', '#77AB59', '#C9DF8A', '#F0F7DA']
+				name: 'Dance to Forget',
+				hexColor: ['#FF4E50', '#FC913A', '#F9D423', '#EDE574', '#E1F5C4']
 			},
 
 			{
@@ -13,8 +13,8 @@ define(["servicesFactory"], function(servicesFactory) {
 			},
 
 			{
-				name: 'Wake Up the Salmon',
-				hexColor: ['#BF2821', '#FA6B05', '#FFED00', '#94DFEB', '#EAA794']
+				name: 'Summer Night Makeout',
+				hexColor: ['#E4E4C5', '#B9D48B', '#8D2036', '#CE0A31', '#D3E4C5']
 			},
 
 			{

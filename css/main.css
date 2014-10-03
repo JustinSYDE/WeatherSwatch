@@ -46,10 +46,15 @@ html, body{
 
 .navbar-brand{
 	font-size: x-large;
+	opacity: .85;
+}
+
+.navbar-brand:hover{
+	opacity: 1;
 }
 
 #swatchTitle{
-	color:#DBA027;
+	color: #b1811e;
 }
 
 h3{
@@ -97,6 +102,7 @@ footer{
 	text-transform: lowercase;
 	font-size: small;
 }
+
 
 
 

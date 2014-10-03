@@ -1,15 +1,15 @@
 define(["servicesFactory"], function(servicesFactory) {
 
-	servicesFactory.factory('SummerCollectionService', function() {
-		var summerCollection = [
+	servicesFactory.factory('SummerPlusCollectionService', function() {
+		var summerPlusCollection = [
 			{
 				name: 'Ocean Five',
 				hexColor: ['#00A0B0', '#6A4A3C', '#CC333F', '#EB6841', '#EDC951']
 			},
 
 			{
-				name: 'Summer Night Makeout',
-				hexColor: ['#E4E4C5', '#B9D48B', '#8D2036', '#CE0A31', '#D3E4C5']
+				name: 'Wake Up the Salmon',
+				hexColor: ['#BF2821', '#FA6B05', '#FFED00', '#94DFEB', '#EAA794']
 			},
 
 			{
@@ -23,6 +23,6 @@ define(["servicesFactory"], function(servicesFactory) {
 			}	
 		];
 
-		return summerCollection;
+		return summerPlusCollection;
 	});
 });

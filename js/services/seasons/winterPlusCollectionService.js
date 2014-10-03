@@ -1,10 +1,10 @@
 define(["servicesFactory"], function(servicesFactory) {
 
-	servicesFactory.factory('WinterCollectionService', function() {
-		var winterCollection = [
+	servicesFactory.factory('WinterPlusCollectionService', function() {
+		var winterPlusCollection = [
 			{
-				name: 'Winter Berries',
-				hexColor: ['#E3E8CD', '#BCD8BF', '#D3B9A3', '#EE9C92', '#FE857E']
+				name: 'Ski Slope Lunch',
+				hexColor: ['#FFFFFF', '#EFF0E3', '#CDD7B6', '#84A19B', '#5D888C']
 			},
 
 			{
@@ -23,6 +23,6 @@ define(["servicesFactory"], function(servicesFactory) {
 			}	
 		];
 
-		return winterCollection;
+		return winterPlusCollection;
 	});
 });

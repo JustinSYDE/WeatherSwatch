@@ -4,98 +4,121 @@
 //SERVICES ALWAYS RETURN AN OBJECT OR A FUNCTION
 
 define(["servicesFactory", 
-		"services/summerCollectionService",
-		"services/fallCollectionService",
-		"services/winterCollectionService",
-		"services/springCollectionService",
-		"services/cityService"], function(servicesFactory) {
+		"services/seasons/summerCollectionService",
+		"services/seasons/fallCollectionService",
+		"services/seasons/winterCollectionService",
+		"services/seasons/springCollectionService",
+		"services/seasons/summerPlusCollectionService",
+		"services/seasons/fallPlusCollectionService",
+		"services/seasons/winterPlusCollectionService",
+		"services/cityService"], 
+		
+		function(servicesFactory) {
 
-	servicesFactory.factory('ColorSwatchService', 
-		['SummerCollectionService', 
-		"FallCollectionService", 
-		"WinterCollectionService",
-		"SpringCollectionService",
-		"CityService",
-		function(summerCollectionService, fallCollectionService, winterCollectionService, springCollectionService, cityService) {
-			var _scope;
+			servicesFactory.factory('ColorSwatchService', 
+				['SummerCollectionService', 
+				"FallCollectionService", 
+				"WinterCollectionService",
+				"SpringCollectionService",
+				"SummerPlusCollectionService",
+				"FallPlusCollectionService",
+				"WinterPlusCollectionService",
+				"CityService",
 
-			var colorSwatchService = {
-				seasons: null,
-				i: 0,
-				cityOne: ' ',
-				cityTwo: " ",
-				cityThree: " ",
-				weather: null,
+				function(summerCollectionService, 
+					fallCollectionService, 
+					winterCollectionService, 
+					springCollectionService, 
+					summerPlusCollectionService, 
+					fallPlusCollectionService, 
+					winterPlusCollectionService, 
+					cityService) {
+					var _scope;
 
-				generateRandomCities: function(){
-					colorSwatchService.cityOne = cityService.generateRandomCity();
-				
-					do{
-						colorSwatchService.cityTwo = cityService.generateRandomCity();
-					}while(colorSwatchService.cityTwo == colorSwatchService.cityOne);
+					var colorSwatchService = {
+						seasons: null,
+						i: 0,
+						cityOne: ' ',
+						cityTwo: " ",
+						cityThree: " ",
+						weather: null,
 
-					do{
-						colorSwatchService.cityThree = cityService.generateRandomCity();
-					}while(colorSwatchService.cityThree == colorSwatchService.cityTwo);
-				},
+						generateRandomCities: function(){
+							colorSwatchService.cityOne = cityService.generateRandomCity();
+						
+							do{
+								colorSwatchService.cityTwo = cityService.generateRandomCity();
+							}while(colorSwatchService.cityTwo == colorSwatchService.cityOne);
 
-				myAjaxCheck:function(city){
-					//console.log(colorSwatchService.city);
+							do{
+								colorSwatchService.cityThree = cityService.generateRandomCity();
+							}while(colorSwatchService.cityThree == colorSwatchService.cityTwo);
+						},
 
-					$.simpleWeather({
-					    location: city,
-					    woeid: '',
-					    unit: 'c',
-					    success: function(weather) {
-					        var temperatureTemp = parseInt(weather.temp);
-					        colorSwatchService.weather = weather.city + '| ' + weather.temp + '°' + weather.units.temp + ' ' + weather.currently;
-					        colorSwatchService.returnSeason(temperatureTemp);
-					        if(_scope){
-					        	_scope.$digest();
-					        }
-					    }
-				  	});
-				},
+						myAjaxCheck:function(city){
+							$.simpleWeather({
+							    location: city,
+							    woeid: '',
+							    unit: 'c',
+							    success: function(weather) {
+							        var temperatureTemp = parseInt(weather.temp);
+							        colorSwatchService.weather = weather.city + '| ' + weather.temp + '°' + weather.units.temp + ' ' + weather.currently;
+							        colorSwatchService.returnSeason(temperatureTemp);
+							        if(_scope){
+							        	_scope.$digest();
+							        }
+							    }
+						  	});
+						},
 
-				returnSeason:function(temperature){
-					/*console.log("returnSeason");
-					console.log(temperature);
-					console.log(colorSwatchService.cityOne);*/
-					var date = new Date();
-					var month = date.getMonth();
+						returnSeason:function(temperature){
+							var date = new Date();
+							var month = date.getMonth();
 
-					if (temperature >= 20){
-						colorSwatchService.seasons = summerCollectionService;	
-					}
+							/*------------------------ SUMMER ---------------------------------*/
+							if (temperature >= 20 && temperature <30){
+								colorSwatchService.seasons = summerCollectionService;	
+							}
 
-					else if (temperature>4 && temperature <20 && (month>7 && month<12)){ //Gives possibility to display fall colours even in cooler, summer months
-						colorSwatchService.seasons = fallCollectionService;
-					}
+							else if(temperature>=30){
+								colorSwatchService.seasons = summerPlusCollectionService;
+							}
 
-					else if (temperature>4 && temperature <20 && (month>1 && month>6)) {//Gives possibility to display spring colours even in warmer, winter months
-						colorSwatchService.seasons = springCollectionService;
-					}
+							/*------------------------ FALL ---------------------------------*/
+							//Gives possibility to display fall colours even in cooler, summer months
+							else if (temperature>12 && temperature <20 && (month>7 && month<12)){ 
+								colorSwatchService.seasons = fallCollectionService;
+							}
 
-					else if (temperature < 4){
-						colorSwatchService.season = winterCollectionService;
-					}
+							else if (temperature>=4 && temperature <12 && (month>7 && month<12)){ 
+								colorSwatchService.seasons = fallPlusCollectionService;
+							}
 
-					if (colorSwatchService.i === 0){
-						//console.log("clicks");
-						//document.getElementById("swatchTitle").click();	//Bad hack that reloads the page so that the color swatch will reload
-						colorSwatchService.i++;
-					}
+							/*------------------------ SPRING ---------------------------------*/
+							//Gives possibility to display spring colours even in warmer, winter months
+							else if (temperature>=4 && temperature <20 && (month>1 && month>6)) {
+								colorSwatchService.seasons = springCollectionService;
+							}
 
-					if (_scope){
-						_scope.$digest();
-					}
-				}
-			};
+							/*------------------------ WINTER ---------------------------------*/
+							else if (temperature < 4 && temperature >= - 10){
+								colorSwatchService.seasons = winterCollectionService;
+							}
 
-		colorSwatchService.init = function(scope){
-			_scope = scope;
-			return colorSwatchService;
-		};
-		return colorSwatchService;
-	}]);
+							else if (temperature < -10){
+								colorSwatchService.seasons = winterPlusCollectionService;
+							}
+
+							if (_scope){
+								_scope.$digest();
+							}
+						}
+					};
+
+				colorSwatchService.init = function(scope){
+					_scope = scope;
+					return colorSwatchService;
+				};
+				return colorSwatchService;
+			}]);
 });

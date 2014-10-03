@@ -1,7 +1,7 @@
 define(["servicesFactory"], function(servicesFactory) {
 
-	servicesFactory.factory('FallCollectionService', function() {
-		var fallCollection = [
+	servicesFactory.factory('FallPlusCollectionService', function() {
+		var fallPlusCollection = [
 			{
 				name: 'Fall Night',
 				hexColor: ['#994C44', '#4B4C4E', '#B97F67', '#E9E5DA', '#786F6A']
@@ -21,8 +21,7 @@ define(["servicesFactory"], function(servicesFactory) {
 				name: 'Halloween',
 				hexColor: ['#090B09', '#665675', '#69A872', '#DC9C41', '#DFDC9A']
 			}	
-		];	
-
-		return fallCollection;
+		];
+		return fallPlusCollection;
 	});
 });
