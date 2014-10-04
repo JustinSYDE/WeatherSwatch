@@ -6,7 +6,7 @@ Author: Justin Wong
 
 Written in: HTML, CSS, Javascript
 
-Filename: index.hmtl
+Filename: index.html
 	
 I hereby declare that this code is a product 
 of my own efforts. This coded solution has
