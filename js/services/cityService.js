@@ -28,7 +28,8 @@ define(["servicesFactory"], function(servicesFactory) {
 			'Chicago', 'Berlin',
 			'Montreal', 'Brussels',
 			'Boston', 'Yellowknife',
-			'Waterloo'],
+			'Waterloo', 'Fraser',
+			"Yakutsk"],
 
 			//Returns a random number between 0 and cityCollection.length
 			generateRandomNum: function(){
