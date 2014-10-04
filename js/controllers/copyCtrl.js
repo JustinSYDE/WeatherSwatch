@@ -2,7 +2,9 @@
 //CONTROLLER DEFINTIIONS SHOULD BE MINIMAL SPECIFYING WHICH CONTROLLER USES WHICH SERVICE, ETC.
 
 define(["controllersFactory", 
-	"services/tabService"], 
+	"services/tabService",
+	"services/cityService",
+	"services/colorSwatchService"], 
 
 	function(controllersFactory) {
 	"use strict";
@@ -11,10 +13,13 @@ define(["controllersFactory",
 		['$scope', 
 		'TabService',
 		'$location',
+		'CityService',
+		'ColorSwatchService',
 
-		function($scope, tabService, $location) {
+		function($scope, tabService, $location, cityService, colorSwatchService) {
 
 			$scope.tabService = tabService;
-			
+			$scope.cityService = cityService;
+			$scope.colorSwatchService = colorSwatchService;
 	}]);
 });

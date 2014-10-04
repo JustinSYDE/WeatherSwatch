@@ -6,6 +6,7 @@ define(["controllersFactory",
 	"services/colorSwatchService", 
 	"services/tabService",
 	"services/cityService", 
+	"services/copyColorService",
 	'directives/colorSwatchDirective'], 
 
 	function(controllersFactory) {
@@ -13,17 +14,21 @@ define(["controllersFactory",
 
 	controllersFactory.controller('ColorSwatchCtrl', 
 		['$scope', 
+		'$timeout',
 		'$location',
 		'ColorSwatchService', 
 		'TabService',
 		'CityService',
+		'CopyColorService',
 
-		function($scope, $location, colorSwatchService, tabService, cityService) {
+		function($scope, $timeout, $location, colorSwatchService, tabService, cityService, copyColorService) {
 
 			$scope.colorSwatchService = colorSwatchService.init($scope);
 			$scope.seasons = colorSwatchService.seasons;
 			$scope.tabService = tabService;
 			$scope.cityService = cityService;
+			$scope.copyColorService = copyColorService;
+
 			$scope.cityOne = colorSwatchService.cityOne;
 			$scope.cityTwo = colorSwatchService.cityTwo; 
 			$scope.cityThree = colorSwatchService.cityThree;
@@ -31,6 +36,9 @@ define(["controllersFactory",
 
 			$scope.copy =  function(hash){
 				$location.path(hash);
+				$timeout(function(){
+					$location.path('/');
+				}, 1500)
 			};
 
 			$scope.colorSwatchService.generateRandomCities();

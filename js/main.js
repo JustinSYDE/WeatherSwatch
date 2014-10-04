@@ -15,7 +15,7 @@
 			'angularRoute': 'libs/angular-route-1.2.24',
 			'bootstrap': 'libs/modernizr-2.6.2-respond-1.1.0.min',
 			'jquery': 'libs/jquery',
-			'simpleWeather': 'libs/jquery.simpleWeather'
+			'simpleWeather': 'libs/jquery.simpleWeather',
 		},
 		shim: {
 			'angular': {
@@ -29,7 +29,7 @@
 			},
 			'simpleWeather': {
 				deps: ['jquery']
-			}
+			},
 		}
 	});
 
