@@ -31,6 +31,7 @@ This webapp was written using the BAR (Bootstrap + AngularJS + RequireJS) templa
 
 Tools used include: 
     * AngularJS
+    * AJAX
     * jQuery
     * Twitter Bootstrap
     * RequireJS
