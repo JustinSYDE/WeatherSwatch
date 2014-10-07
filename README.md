@@ -38,10 +38,10 @@ Tools used include:
     * simpleWeather (https://github.com/monkeecreate/jquery.simpleWeather/)
     
 #Examples:
-###Chilly in Yakutsk
-![](http://puu.sh/bZrys/3e5f7fe04d.png)
+###Chilly in Yellowknife
+![](http://puu.sh/c3efR/4e3a91edd5.png)
 
-###Frying in San Fran
-![](http://puu.sh/bZrFb/0789552518.png)
+###Frying in Dubai
+![](http://puu.sh/c3enQ/7100ab11ab.png)
 
 Enjoy!
