@@ -31,7 +31,7 @@ html, body{
 
 #mainBody{
 	position: relative;
-	height: 93%;
+	height: 95%;
 	width: 100%;
 }
 
@@ -85,7 +85,8 @@ footer{
 	text-align: center;
 	color: gray;
 	height: 5%;
-	padding-top: 1%;
+	padding-top: auto;
+	padding-bottom: auto;
 	background-color: #3f3f3f;
 }
 
@@ -127,7 +128,7 @@ footer a:hover{
 	}
 
 	#mainBody{
-		height: 94%;
+		height: 95%;
 	}
 }
 
