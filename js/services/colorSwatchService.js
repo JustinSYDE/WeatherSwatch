@@ -108,7 +108,7 @@ define(["servicesFactory",
 							else if (temperature < -10){
 								colorSwatchService.seasons = winterPlusCollectionService;
 							}
-
+							
 							if (_scope){
 								_scope.$digest();
 							}

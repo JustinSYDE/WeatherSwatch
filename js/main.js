@@ -16,6 +16,7 @@
 			'bootstrap': 'libs/modernizr-2.6.2-respond-1.1.0.min',
 			'jquery': 'libs/jquery',
 			'simpleWeather': 'libs/jquery.simpleWeather',
+			'bootstrapJS': 'libs/bootstrap'
 		},
 		shim: {
 			'angular': {
@@ -30,6 +31,9 @@
 			'simpleWeather': {
 				deps: ['jquery']
 			},
+			'bootstrapJS':{
+				deps: ['jquery']
+			}
 		}
 	});
 
@@ -59,7 +63,7 @@
 	);
 
 	//BOOTSTRAP ANGULARJS TO THE MOTHER 'APP'
-	require(['app', 'jquery', 'simpleWeather'], function(app, jquery, simpleWeather) {
+	require(['app', 'jquery', 'simpleWeather', 'bootstrap', 'bootstrapJS'], function(app, jquery, simpleWeather, bootstrap, bootstrapJS) {
 		require([
 				'controllers/colorSwatchCtrl',
 				'controllers/copyCtrl'

@@ -11,7 +11,7 @@
         <span id="weather">{{weather}}</span>
       </a>
     </div>
-    <div class="navbar-collapse collapse">
+    <div class="navbar-collapse collapse" style="background-color: #f6f6f6">
       <ul class="nav nav-pills navbar-right">
             <li ng-class="{active: tabService.isSet(1)}">
               <a id="currentCity" ng-click="tabService.setTab(1); colorSwatchService.myAjaxCheck(colorSwatchService.cityOne);">{{cityOne}}</a>
