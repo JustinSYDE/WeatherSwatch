@@ -38,6 +38,9 @@ Tools used include:
     * simpleWeather (https://github.com/monkeecreate/jquery.simpleWeather/)
     
 #Examples:
+
+###Help panel
+![](http://puu.sh/ce8Tx/db1ebc01a2.png)
 ###Chilly in Yellowknife
 ![](http://puu.sh/c3efR/4e3a91edd5.png)
 
