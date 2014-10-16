@@ -15,4 +15,11 @@ define(['directivesFactory'], function(directivesFactory){
 			templateUrl: "templates/partials/navbar.html"
 		};
 	});
+
+	directivesFactory.directive('sidePanel', function(){
+		return{
+			restrict: 'E',
+			templateUrl: "templates/partials/side-panel.html"
+		};
+	});
 });

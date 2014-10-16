@@ -36,6 +36,16 @@ html, body{
 	margin-top: 1%;
 }
 
+#copyMessage{
+	text-align: center;
+	padding-top: 20%;
+	height: 95%;
+	width: 100%;
+}
+
+
+/*----------------------------------- COLOR SWATCH ------------------------------*/
+
 .row{
 	margin: 0;
 	float: left;
@@ -44,30 +54,9 @@ html, body{
 	width: 100%;
 }
 
-.navbar-brand{
-	font-size: x-large;
-	opacity: .85;
-}
-
-.navbar-brand:hover{
-	opacity: 1;
-}
-
-#swatchTitle{
-	color: #b1811e;
-}
-
-h3{
-	padding-top: 25%;
-	text-align: center;
-}
-
-.navbar {
-    font-weight: 800;
-    font-size: 14px;
-    padding-top: 1%;
-    height: 5%;
-    position: relative;
+#colorSwatch{
+	z-index: 1;
+	position: relative;
 }
 
 .colorBox {
@@ -86,25 +75,15 @@ h3{
     box-shadow:         inset 0 -1em #3f3f3f;
 }
 
+
+/*------------------------------------- FOOTER ----------------------------------------*/
+
 footer{
 	text-align: center;
 	color: gray;
 	height: 5%;
 	padding-top: 1%;
 	background-color: #3f3f3f;
-}
-
-#copyMessage{
-	text-align: center;
-	padding-top: 20%;
-	height: 95%;
-	width: 100%;
-}
-
-#weather{
-	color: gray;
-	text-transform: lowercase;
-	font-size: small;
 }
 
 footer a{
@@ -115,6 +94,103 @@ footer a:hover{
 	text-decoration: none;
 	color: white;
 }
+
+
+/*-------------------------------------- NAVBAR ----------------------------------*/
+
+.navbar-brand{
+	font-size: x-large;
+	opacity: .85;
+}
+
+.navbar-brand:hover{
+	opacity: 1;
+}
+
+#swatchTitle{
+	color: #b1811e;
+	font-weight: bold;
+}
+
+#weatherTitle{
+	color: #428bca;
+	font-weight: bold;
+}
+
+h3{
+	padding-top: 25%;
+	text-align: center;
+}
+
+.navbar {
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 1%;
+    height: 5%;
+    position: relative;
+}
+
+#weather{
+	color: gray;
+	text-transform: lowercase;
+	font-size: small;
+}
+
+
+/*------------------------------------- SIDE PANEL ------------------------------------*/
+
+#sidePanel{
+	z-index: 2;
+	height: 99.8%;
+	width: 20%;
+	position: absolute;
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: #f6f6f6;
+	font-family: 'Droid Sans', serif;
+	color: #4e4e4e;
+	-webkit-box-shadow: 8px 0 10px -7px gray;
+	-moz-box-shadow: 8px 0 10px -7px gray;
+	box-shadow: 8px 0 10px -7px gray;
+	opacity: 0.90;
+} 
+
+#sidePanel h3{
+	text-align: left;
+	padding-top: 25px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+#sidePanel a:hover{
+	text-decoration: none;
+	color: #2e618d;
+}
+
+#sidePanel ul{
+	padding: 25px;
+	list-style-type: none;
+}
+
+#sidePanel ul li{
+	list-style-image: url(images/check.png);
+}
+
+#closeArea{
+	width: 100%;
+	padding-bottom: 35px;
+}
+
+#close{
+	padding-top: 20px;
+	float: right;
+	opacity: 0.35;
+}
+
+#close:hover{
+	opacity: 0.7;
+}
+
 
 /*------------------------------------- RESPONSIVE RULES ----------------------------*/
 
@@ -137,11 +213,20 @@ footer a:hover{
 	footer{
 		padding-top: 2%;
 	}
+
+	#sidePanel{
+		width: 40%;
+	}
 }
 
 @media (max-width: 470px){
 	.navbar-brand{
 		font-size: x-small;
+	}
+
+	#sidePanel{
+		width: 100%;
+		height: auto;
 	}
 }
 

@@ -7,6 +7,7 @@ define(["controllersFactory",
 	"services/tabService",
 	"services/cityService", 
 	"services/copyColorService",
+	"services/sidePanelService",
 	'directives/colorSwatchDirective'], 
 
 	function(controllersFactory) {
@@ -20,14 +21,16 @@ define(["controllersFactory",
 		'TabService',
 		'CityService',
 		'CopyColorService',
+		'SidePanelService',
 
-		function($scope, $timeout, $location, colorSwatchService, tabService, cityService, copyColorService) {
+		function($scope, $timeout, $location, colorSwatchService, tabService, cityService, copyColorService, sidePanelService) {
 
 			$scope.colorSwatchService = colorSwatchService.init($scope);
 			$scope.seasons = colorSwatchService.seasons;
 			$scope.tabService = tabService;
 			$scope.cityService = cityService;
 			$scope.copyColorService = copyColorService;
+			$scope.sidePanelService = sidePanelService;
 
 			$scope.cityOne = colorSwatchService.cityOne;
 			$scope.cityTwo = colorSwatchService.cityTwo; 
@@ -57,8 +60,7 @@ define(["controllersFactory",
 						scope.cityTwo = newValues[1];
 						scope.cityThree = newValues[2];
 						scope.seasons = newValues[3];
-						scope.weather = newValues[4];
-					
+						scope.weather = newValues[4];	
 			});
 	}]);
 });

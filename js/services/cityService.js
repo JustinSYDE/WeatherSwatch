@@ -1,5 +1,5 @@
 define(["servicesFactory"], function(servicesFactory) {
-
+ 
 	servicesFactory.factory('CityService', function() {
 		var cityService = {
 			cityCollection: 
