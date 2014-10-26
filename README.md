@@ -46,6 +46,6 @@ Tools used include:
 ![](http://puu.sh/cqYXK/95d3910d2b.png)
 
 ###Warm evening in Miami
-![](http://puu.sh/cqZ1E/f64ff5b072.png)
+![](http://puu.sh/cqZ2V/cfe3620c1a.png)
 
 Enjoy!
