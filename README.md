@@ -40,11 +40,12 @@ Tools used include:
 #Examples:
 
 ###Help panel
-![](http://puu.sh/ce8Tx/db1ebc01a2.png)
-###Chilly in Yellowknife
-![](http://puu.sh/c3efR/4e3a91edd5.png)
+![](http://puu.sh/cqYVo/c0fa44964d.png)
 
-###Frying in Dubai
-![](http://puu.sh/c3enQ/7100ab11ab.png)
+###Chilly in Yellowknife
+![](http://puu.sh/cqYXK/95d3910d2b.png)
+
+###Warm evening in Miami
+![](http://puu.sh/cqZ1E/f64ff5b072.png)
 
 Enjoy!
