@@ -20,7 +20,7 @@ define(["servicesFactory"], function(servicesFactory) {
 			{
 				name: 'Pumpkin',
 				hexColor: ['#7F9B84', '#C7CD9D', '#FFE1CF', '#F2DE65', '#DB9132']
-			}	
+			}
 		];	
 
 		return fallCollection;
