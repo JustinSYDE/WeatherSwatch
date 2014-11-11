@@ -40,7 +40,7 @@ Tools used include:
 #Examples:
 
 ###Help panel
-![](https://raw.github.com/JustinSYDE/WeatherSwatch/gh-pages/css/screenshots/help.png)
+![](https://raw.github.com/JustinSYDE/WeatherSwatch/gh-pages/css/screenshots/calgary.png)
 
 ###Chilly in Yellowknife
 ![](https://raw.github.com/JustinSYDE/WeatherSwatch/gh-pages/css/screenshots/yellowknife.png)
