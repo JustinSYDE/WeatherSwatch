@@ -109,8 +109,6 @@ define(["servicesFactory",
 								colorSwatchService.seasons = winterPlusCollectionService;
 							}
 							
-							colorSwatchService.seasons = fallCollectionService;
-							
 							if (_scope){
 								_scope.$digest();
 							}
