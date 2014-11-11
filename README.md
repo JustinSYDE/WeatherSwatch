@@ -40,12 +40,12 @@ Tools used include:
 #Examples:
 
 ###Help panel
-![](http://puu.sh/cqYVo/c0fa44964d.png)
+![](https://raw.github.com/JustinSYDE/WeatherSwatch/gh-pages/css/screenshots/help.png)
 
 ###Chilly in Yellowknife
-![](http://puu.sh/cqYXK/95d3910d2b.png)
+![](https://raw.github.com/JustinSYDE/WeatherSwatch/gh-pages/css/screenshots/yellowknife.png)
 
 ###Warm evening in Miami
-![](http://puu.sh/cqZ2V/cfe3620c1a.png)
+![](https://raw.github.com/JustinSYDE/WeatherSwatch/gh-pages/css/screenshots/miami.png)
 
 Enjoy!
