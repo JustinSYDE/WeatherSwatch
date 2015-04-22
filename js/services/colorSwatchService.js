@@ -112,10 +112,10 @@ define(["servicesFactory",
 						},
 
 						calculateHex:function(temperature, number) {
-							if (number + temperature > 255) {
-								return number - temperature;
+							if (number + 2*temperature > 255) {
+								return number - 2*temperature;
 							} else {
-								return number + temperature;
+								return number + 2*temperature;
 							}
 						},
 
