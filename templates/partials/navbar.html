@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#" ng-click="tabService.setTab(0)"><span><img src="css/images/weatherSwatch.png"></span>WEATHER <span id="swatchTitle">SWATCH</span> 
+      <a class="navbar-brand" ng-click="tabService.setTab(0); colorSwatchService.myAjaxCheck(cityService.generateRandomCity()); colorSwatchService.generateRandomCities()"><span><img src="css/images/weatherSwatch.png"></span>WEATHER <span id="swatchTitle">SWATCH</span> 
         <span id="weather">{{weather}}</span>
       </a>
     </div>

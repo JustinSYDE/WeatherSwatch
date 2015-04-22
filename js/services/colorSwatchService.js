@@ -121,42 +121,43 @@ define(["servicesFactory",
 
 						returnSeason:function(temperature){
 							var date = new Date();
-							var month = date.getMonth();
+							//var month = date.getMonth();
 
 							/*------------------------ SUMMER ---------------------------------*/
-							if (temperature >= 20 && temperature <30){
-								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, summerCollectionService);	
-							}
-
-							else if(temperature>=30){
+							if(temperature>=30){
 								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, summerPlusCollectionService);
 							}
 
-							/*------------------------ FALL ---------------------------------*/
-							//Gives possibility to display fall colours even in cooler, summer months
-							else if (temperature>12 && temperature <20 && (month>7 && month<12)){ 
-								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, fallCollectionService);
-							}
-
-							else if (temperature>=4 && temperature <12 && (month>7 && month<12)){ 
-								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, fallPlusCollectionService);
+							else if (temperature >= 20){
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, summerCollectionService);	
 							}
 
 							/*------------------------ SPRING ---------------------------------*/
 							//Gives possibility to display spring colours even in warmer, winter months
-							else if (temperature>=4 && temperature <20 && (month>1 && month>6)) {
+							else if (temperature >=15 /*&& (month>1 && month>6)*/) {
 								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, springCollectionService);
 							}
 
+							/*------------------------ FALL ---------------------------------*/
+							//Gives possibility to display fall colours even in cooler, summer months
+							else if (temperature >= 7 /*&& (month>7 && month<12)*/){ 
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, fallCollectionService);
+							}
+
+							else if (temperature >= 0 /*&& (month>7 && month<12)*/){ 
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, fallPlusCollectionService);
+							}
+
 							/*------------------------ WINTER ---------------------------------*/
-							else if (temperature < 4 && temperature >= - 10){
+							else if (temperature >= -10){
 								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, winterCollectionService);
 							}
 
-							else if (temperature < -10){
+							else if (temperature >= -20){
 								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, winterPlusCollectionService);
 							}
 							
+							console.log("temperature:" + temperature + ", season: " + colorSwatchService.seasons);
 							if (_scope){
 								_scope.$digest();
 							}

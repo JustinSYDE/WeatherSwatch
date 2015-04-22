@@ -6,7 +6,6 @@ define(["controllersFactory",
 	"services/colorSwatchService", 
 	"services/tabService",
 	"services/cityService", 
-	"services/copyColorService",
 	"services/sidePanelService",
 	'directives/colorSwatchDirective'], 
 
@@ -20,29 +19,20 @@ define(["controllersFactory",
 		'ColorSwatchService', 
 		'TabService',
 		'CityService',
-		'CopyColorService',
 		'SidePanelService',
 
-		function($scope, $timeout, $location, colorSwatchService, tabService, cityService, copyColorService, sidePanelService) {
+		function($scope, $timeout, $location, colorSwatchService, tabService, cityService, sidePanelService) {
 
 			$scope.colorSwatchService = colorSwatchService.init($scope);
 			$scope.seasons = colorSwatchService.seasons;
 			$scope.tabService = tabService;
 			$scope.cityService = cityService;
-			$scope.copyColorService = copyColorService;
 			$scope.sidePanelService = sidePanelService;
 
 			$scope.cityOne = colorSwatchService.cityOne;
 			$scope.cityTwo = colorSwatchService.cityTwo; 
 			$scope.cityThree = colorSwatchService.cityThree;
 			$scope.weather = colorSwatchService.weather;
-
-			$scope.copy =  function(hash){
-				$location.path(hash);
-				$timeout(function(){
-					$location.path('/');
-				}, 1500);
-			};
 
 			$scope.colorSwatchService.generateRandomCities();
 			$scope.colorSwatchService.myAjaxCheck($scope.cityService.generateRandomCity());
