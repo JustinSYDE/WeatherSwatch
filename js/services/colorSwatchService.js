@@ -71,42 +71,90 @@ define(["servicesFactory",
 						  	});
 						},
 
+						convertToWeatherCalculatedColors:function(temperature, seasonCollection) {
+							// Output: a new seasonCollection object with new colors
+
+							var calculatedCollection = [{hexColor:{}},{hexColor:{}},{hexColor:{}},{hexColor:{}}];
+
+							for (i = 0; i < 4; i++) {
+								for (j = 0; j < 5; j++) {
+									calculatedCollection[i].hexColor[j] = colorSwatchService.calculateColor(temperature, seasonCollection[i].hexColor[j]);
+								}
+							}
+
+							return calculatedCollection;
+						},
+
+						calculateColor:function(temperature, color) {
+							// <0> Isolate hex string from input string
+							var red = color.substr(1,2);
+							var green = color.substr(3,2);
+							var blue = color.substr(5,2);
+
+							// <1> Convert hex string to 3 separate base 10 integers (i.e. for R, G, B)
+							red = parseInt('0x' + red);
+							green = parseInt('0x' + green);
+							blue = parseInt('0x' + blue);
+
+							// <2> Add temperature to above integers
+							// If the overall sum is greater than 255, then subtract instead - if the overall sum is less than 0 - add instead
+							red = colorSwatchService.calculateHex(temperature, red);
+							green = colorSwatchService.calculateHex(temperature, green);
+							blue = colorSwatchService.calculateHex(temperature, blue);
+
+							// <3> Convert back to hex string
+							red = red.toString(16);
+							green = green.toString(16);
+							blue = blue.toString(16);
+
+							// <4> Return the new color string
+							return '#' + red + green + blue;
+						},
+
+						calculateHex:function(temperature, number) {
+							if (number + temperature > 255) {
+								return number - temperature;
+							} else {
+								return number + temperature;
+							}
+						},
+
 						returnSeason:function(temperature){
 							var date = new Date();
 							var month = date.getMonth();
 
 							/*------------------------ SUMMER ---------------------------------*/
 							if (temperature >= 20 && temperature <30){
-								colorSwatchService.seasons = summerCollectionService;	
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, summerCollectionService);	
 							}
 
 							else if(temperature>=30){
-								colorSwatchService.seasons = summerPlusCollectionService;
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, summerPlusCollectionService);
 							}
 
 							/*------------------------ FALL ---------------------------------*/
 							//Gives possibility to display fall colours even in cooler, summer months
 							else if (temperature>12 && temperature <20 && (month>7 && month<12)){ 
-								colorSwatchService.seasons = fallCollectionService;
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, fallCollectionService);
 							}
 
 							else if (temperature>=4 && temperature <12 && (month>7 && month<12)){ 
-								colorSwatchService.seasons = fallPlusCollectionService;
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, fallPlusCollectionService);
 							}
 
 							/*------------------------ SPRING ---------------------------------*/
 							//Gives possibility to display spring colours even in warmer, winter months
 							else if (temperature>=4 && temperature <20 && (month>1 && month>6)) {
-								colorSwatchService.seasons = springCollectionService;
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, springCollectionService);
 							}
 
 							/*------------------------ WINTER ---------------------------------*/
 							else if (temperature < 4 && temperature >= - 10){
-								colorSwatchService.seasons = winterCollectionService;
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, winterCollectionService);
 							}
 
 							else if (temperature < -10){
-								colorSwatchService.seasons = winterPlusCollectionService;
+								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, winterPlusCollectionService);
 							}
 							
 							if (_scope){
