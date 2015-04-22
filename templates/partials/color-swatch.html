@@ -1,11 +1,6 @@
 <div class="row" id="colorSwatch" ng-repeat="season in seasons">
-	  <a 
-	  id = "copy"
-	  class="colorBox hvr-float" 
-	  style="display: inline-block; background-color: {{color}}"
-	  ng-repeat="color in season.hexColor"> <!--Use angular.js to repeat list the 5 other columns-->
-	    <h3 id="copy_this_text">{{color}}</h3>
-	  </a>
+	  <!--Use angular.js to repeat list the 5 other columns-->
+	  <div  class="colorBox hvr-bubble-float-bottom" style="display: inline-block; border-color: {{color}}; background-color: {{color}}" ng-repeat="color in season.hexColor"> 
+	    <h3 class="colorId">{{color}}</h3>
+	  </div>
 </div>
-
-<!-- ng-click="copy('/copy')" -->

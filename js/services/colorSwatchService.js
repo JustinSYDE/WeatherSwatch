@@ -96,24 +96,31 @@ define(["servicesFactory",
 							blue = colorSwatchService.calculateHex(temperature, blue);
 
 							// <3> Convert back to hex string
-							red = red.toString(16);
-							green = green.toString(16);
-							blue = blue.toString(16);
+							red = colorSwatchService.fixHexFormat(red.toString(16));
+							green = colorSwatchService.fixHexFormat(green.toString(16));
+							blue = colorSwatchService.fixHexFormat(blue.toString(16));
 
 							// <4> Return the new color string
 							return '#' + red + green + blue;
 						},
 
 						calculateHex:function(temperature, number) {
-							if (number + 2*temperature > 255) {
-								return number - 2*temperature;
+							if (number + temperature > 255) {
+								return number - temperature;
 							} else {
-								return number + 2*temperature;
+								return number + temperature;
+							}
+						},
+
+						fixHexFormat:function(string) {
+							if (string.length == 1) {
+								return '0' + string;
+							} else {
+								return string;
 							}
 						},
 
 						returnSeason:function(temperature){
-							var date = new Date();
 
 							/*------------------------ SUMMER ---------------------------------*/
 							if(temperature>=30){
