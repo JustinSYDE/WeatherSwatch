@@ -5,7 +5,7 @@ define(["servicesFactory"], function(servicesFactory) {
 			hide: function(){
 				$(document).ready(function(){
 					$('#sidePanel').hide('slide');
-				})
+				});
 			}
 		};
 

@@ -41,7 +41,7 @@ define(["controllersFactory",
 				$location.path(hash);
 				$timeout(function(){
 					$location.path('/');
-				}, 1500)
+				}, 1500);
 			};
 
 			$scope.colorSwatchService.generateRandomCities();

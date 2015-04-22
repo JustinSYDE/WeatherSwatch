@@ -65,14 +65,14 @@ html, body{
 	color: #4e4e4e;
 }
 
-.colorBox:hover, .colorbox:focus{
+/*.colorBox:hover, .colorbox:focus{
 	text-decoration: none;
 	color: black;
 
 	-moz-box-shadow:    inset 0 0 0.7em black;
     -webkit-box-shadow: inset 0 0 0.7em black;
     box-shadow:         inset 0 0 0.7em black;
-}
+}*/
 
 .showInfo{
 	color: white;
@@ -140,6 +140,9 @@ h3{
 	font-size: small;
 }
 
+.navbar-fixed-top, .navbar-fixed-bottom {
+	z-index: 1;
+}
 
 /*------------------------------------- SIDE PANEL ------------------------------------*/
 
@@ -195,6 +198,26 @@ h3{
 	opacity: 0.7;
 }
 
+.hvr-float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
 
 /*------------------------------------- RESPONSIVE RULES ----------------------------*/
 
