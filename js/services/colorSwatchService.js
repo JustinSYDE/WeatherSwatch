@@ -1,8 +1,3 @@
-//TEMPLATE OF A SERVICE TO BE USED BY THE TEMPLATE MAIN CONTROLLER
-//SERVICES SHOULD CONTAIN MAJORITY OF THE LOGIC AND CODE
-//ALSO POSSIBLE TO INJECT OTHER HELPER SERVICES TO A SERVICE TO ABSTRACTIFY CODE
-//SERVICES ALWAYS RETURN AN OBJECT OR A FUNCTION
-
 define(["servicesFactory", 
 		"services/seasons/summerCollectionService",
 		"services/seasons/fallCollectionService",
@@ -72,8 +67,6 @@ define(["servicesFactory",
 						},
 
 						convertToWeatherCalculatedColors:function(temperature, seasonCollection) {
-							// Output: a new seasonCollection object with new colors
-
 							var calculatedCollection = [{hexColor:{}},{hexColor:{}},{hexColor:{}},{hexColor:{}}];
 
 							for (i = 0; i < 4; i++) {
@@ -121,7 +114,6 @@ define(["servicesFactory",
 
 						returnSeason:function(temperature){
 							var date = new Date();
-							//var month = date.getMonth();
 
 							/*------------------------ SUMMER ---------------------------------*/
 							if(temperature>=30){
@@ -134,17 +126,17 @@ define(["servicesFactory",
 
 							/*------------------------ SPRING ---------------------------------*/
 							//Gives possibility to display spring colours even in warmer, winter months
-							else if (temperature >=15 /*&& (month>1 && month>6)*/) {
+							else if (temperature >=15) {
 								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, springCollectionService);
 							}
 
 							/*------------------------ FALL ---------------------------------*/
 							//Gives possibility to display fall colours even in cooler, summer months
-							else if (temperature >= 7 /*&& (month>7 && month<12)*/){ 
+							else if (temperature >= 7){ 
 								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, fallCollectionService);
 							}
 
-							else if (temperature >= 0 /*&& (month>7 && month<12)*/){ 
+							else if (temperature >= 0){ 
 								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, fallPlusCollectionService);
 							}
 
@@ -156,8 +148,7 @@ define(["servicesFactory",
 							else if (temperature >= -20){
 								colorSwatchService.seasons = colorSwatchService.convertToWeatherCalculatedColors(temperature, winterPlusCollectionService);
 							}
-							
-							console.log("temperature:" + temperature + ", season: " + colorSwatchService.seasons);
+
 							if (_scope){
 								_scope.$digest();
 							}
