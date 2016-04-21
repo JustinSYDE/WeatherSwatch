@@ -2,7 +2,7 @@
 
 	'use strict';
 
-	//CONFIGURE THE LIBRARIES TO BE USED 
+	//CONFIGURE THE LIBRARIES TO BE USED
 	//ASSIGN NAME ALIAS FOR DIRECTORIES AND INDICATE THEIR DIRECTORIES
 	require.config({
 		baseUrl: 'js',
@@ -11,7 +11,7 @@
 			'angularRoute': 'libs/angular-route-min-1.2.24',
 			'bootstrap': 'libs/modernizr-2.6.2-respond-1.1.0.min',
 			'jquery': 'libs/jquery-1.11.2.min',
-			'simpleWeather': 'libs/jquery.simpleWeather',
+			'simpleWeather': 'libs/jquery.simpleWeather.min',
 			'bootstrapJS': 'libs/bootstrap.min'
 		},
 		shim: {
@@ -33,7 +33,7 @@
 		}
 	});
 
-	//DEFINE THE MAIN MODULES TO BE LOADED 
+	//DEFINE THE MAIN MODULES TO BE LOADED
 	define('controllersFactory', ['angular'], function(angular) {
 		return angular.module('app.controllers', []);
 	});
